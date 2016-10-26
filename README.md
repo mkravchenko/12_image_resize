@@ -18,7 +18,7 @@ By default image will be saved near the origin image.<br />
 
 # How to run:<br />
 1. Run the program: <br />
-python image_resize.py -image \<path_to_original_image\> -scale 2 -output <path_to_result_folder\> <br />
+python image_resize.py -image \<path_to_original_image\> -scale 2 -output \<path_to_result_folder\> <br />
 or <br />
 python image_resize.py -image \<path_to_original_image\> -width 1000 <br />
 2. Program will print path to the new resided image. Example:<br />
