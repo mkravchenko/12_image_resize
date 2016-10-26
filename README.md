@@ -12,7 +12,7 @@ Optional:<br />
 -output [path_to_save_result] <br />
 
 #Rules:
-If given only "width" then "height" will recalculate to save proportions and in reverse.<br />
+If given only "width" then "height" will be recalculated to save proportions and in reverse.<br />
 If given "scale" then "width" and "height" must be missing in other way you will get an error message.<br />
 By default image will be saved near the origin image.<br />
 
