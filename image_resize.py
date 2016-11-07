@@ -64,7 +64,7 @@ def check_input_params(input_width, input_height, input_scale):
 
 
 def get_command_line_arguments():
-    parser = argparse.ArgumentParser(description='Lorem Ipsum')
+    parser = argparse.ArgumentParser(description='Image resize parameters.')
     parser.add_argument('-image', help='Path to image.', required=True)
     parser.add_argument('-width', help='Width to be changed.', required=False)
     parser.add_argument('-height', help='Height to be changed.', required=False)
