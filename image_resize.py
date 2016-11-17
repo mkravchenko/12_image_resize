@@ -6,12 +6,9 @@ import os
 def resize_image(path_to_original, input_width, input_height, input_scale):
     image = get_image(path_to_original)
     if input_width is not None or input_height is not None:
-        width_new, height_new = get_calculated_dimensions(image, input_width, input_height)
+        width_new, height_new = get_calculated_width_height_dimensions(image, input_width, input_height)
     elif input_scale is not None:
-        input_scale = float(input_scale)
-        width_new, height_new = image.size
-        width_new *= input_scale
-        height_new *= input_scale
+        width_new, height_new = get_calculated_scale_dimensions(image, input_scale)
     return image.resize((int(width_new), int(height_new)), Image.ANTIALIAS)
 
 
@@ -30,7 +27,7 @@ def get_image(path_to_original):
         print("cannot convert", path_to_original)
 
 
-def get_calculated_dimensions(image, orig_width, orig_height):
+def get_calculated_width_height_dimensions(image, orig_width, orig_height):
     original_width, original_height = image.size
     if orig_width is None:
         width_new = float(orig_height) * (original_width / original_height)
@@ -40,6 +37,14 @@ def get_calculated_dimensions(image, orig_width, orig_height):
         return float(orig_width), height_new
     else:
         return float(orig_width), float(orig_height)
+
+
+def get_calculated_scale_dimensions(image, scale):
+    scale = float(scale)
+    width_new, height_new = image.size
+    width_new *= scale
+    height_new *= scale
+    return width_new, height_new
 
 
 def get_path_to_image(image_path):
